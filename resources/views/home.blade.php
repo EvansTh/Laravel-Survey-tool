@@ -34,6 +34,16 @@
                                             {{ $questionnaire->publicPath() }}
                                         </a>
                                     </p>
+                                    <div class="social-buttons">
+                                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ $questionnaire->publicPath() }}"
+                                           target="_blank">
+                                           <i class="fa fa-facebook-official"></i>
+                                        </a>
+                                        <a href="https://twitter.com/intent/tweet?url={{ $questionnaire->publicPath() }}"
+                                           target="_blank">
+                                            <i class="fa fa-twitter-square"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </li>
                         @endforeach

@@ -24,8 +24,8 @@ class QuestionnaireController extends Controller
         ]);
 
         $questionnaire = auth()->user()->questionnaires()->create($data);
-
-        return redirect('/questionnaires/'.$questionnaire->id);
+        
+        return redirect()->route('questionnaires', $questionnaire->id);
     }
 
     public function show(\App\Questionnaire $questionnaire)

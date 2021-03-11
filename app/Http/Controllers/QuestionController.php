@@ -22,7 +22,7 @@ class QuestionController extends Controller
         $question = $questionnaire->questions()->create($data['question']);
         $question->answers()->createMany($data['answers']);
 
-        return redirect('/questionnaires/'.$questionnaire->id);
+        return redirect()->route('questionnaires', $questionnaire->id);
     }
 
     public function destroy(Questionnaire $questionnaire, Question $question)

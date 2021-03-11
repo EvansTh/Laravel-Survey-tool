@@ -26,10 +26,10 @@
                                         <li class="list-group-item">
                                             <input type="radio" name="responses[{{ $key }}][answer_id]" id="answer{{ $answer->id }}"
                                                    {{ (old('responses.' . $key . '.answer_id') == $answer->id) ? 'checked' : '' }}
-                                                   class="mr-2" value="{{ $answer->id }}">
+                                                   class="mr-2" value="{{ $answer->id }}" required>
                                             {{ $answer->answer }}
 
-                                            <input type="hidden" name="responses[{{ $key }}][question_id]" value="{{ $question->id }}">
+                                            <input type="hidden" name="responses[{{ $key }}][question_id]" value="{{ $question->id }}" required>
                                         </li>
                                     </label>
                                 @endforeach
@@ -44,7 +44,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Your Name</label>
-                            <input name="survey[name]" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Name">
+                            <input name="survey[name]" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter Name" required>
                             <small id="nameHelp" class="form-text text-muted">Hello! What's your name?</small>
 
                             @error('name')
@@ -54,7 +54,7 @@
 
                         <div class="form-group">
                             <label for="email">Your Email</label>
-                            <input name="survey[email]" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email">
+                            <input name="survey[email]" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email" required>
                             <small id="emailHelp" class="form-text text-muted">Your Email Please!</small>
 
                             @error('email')
